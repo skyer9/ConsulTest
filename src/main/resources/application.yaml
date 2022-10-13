@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: myApp
+  cloud:
+    consul:
+      discovery:
+        instance-id: ${spring.application.name}:${random.value}
+        serviceName: myprefix-${spring.application.name}
+        healthCheckPath: /actuator/health
+        healthCheckInterval: 15s
